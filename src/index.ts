@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 const router: express.Router = express.Router();
 router.post('/api/calc', (req: express.Request, res: express.Response) => {
     console.log(req.body)
-    res.send(req.body)
+    res.send({ text: req.body.text, response_type: "in_channel" })
 });
 
 app.use(router)
 
-app.listen(PORT, () => { console.log(`app listening on port ${PORT}.`) })
+app.listen(PORT, () => { console.log(`app listening on port ${PORT}`) })
