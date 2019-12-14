@@ -7,3 +7,7 @@ dist: $(SRCS)
 .PHONY: watch
 watch:
 	npx ts-node-dev --respawn src/index.ts
+
+.PHONY: deploy
+deploy:
+	git push heroku master
